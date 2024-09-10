@@ -95,13 +95,9 @@ body {
     background: #faf7ee;
 }
 
-body {
-
-}
-
 .header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-        url("https://res.cloudinary.com/damenyachting/image/upload/q_auto,f_auto,w_1920/Home/Amels80_Key-Sluiter-Web_teyjnf");
+        url("/assets/yacht-2.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -122,7 +118,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    backdrop-filter: blur(100px);
+    /* background: #262626; */
+    backdrop-filter: blur(10px);
 }
 
 .nav__logo a {
@@ -150,7 +147,7 @@ nav {
     justify-content: end;
     flex-direction: column;
     gap: 2rem;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     transition: 0.5s;
     z-index: -1;
     transform: opacity 200ms;
@@ -172,7 +169,7 @@ nav {
 }
 
 .nav__links a:hover {
-    color: var(--extra-light);
+    color: #e1f5fe !important;
 }
 
 .nav__btns {
@@ -185,17 +182,17 @@ nav {
 }
 
 .header__container p {
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 300;
     line-height: 1.1;
     margin-bottom: 1rem;
-    margin-top: 300px;
+    margin-top: 280px;
     color: var(--white);
 }
 
 .header__container h1 {
-
     color: var(--white);
+    margin-bottom: 10px;
 }
 
 .header__flex {
@@ -240,7 +237,7 @@ nav {
   /* Header başlıkları */
   .about__header h3 {
     margin: 0;
-    font-size: 63px;
+    font-size: 40px;
     font-weight: 100;
     line-height: 1.1;
     letter-spacing: 1px;
@@ -251,7 +248,7 @@ nav {
     font-family: Poppins, sans-serif;
     color: #c8a379;
     margin: 1rem 0;
-    font-size: 22px;
+    font-size: 16px;
     letter-spacing: 12px;
     font-weight: 200;
     text-transform: uppercase;
@@ -262,10 +259,9 @@ nav {
     margin-top: 3rem;
     font-family: Poppins, sans-serif;
     font-weight: 300;
-    font-size: 16px;
-    line-height: 1.75;
+    font-size: 12px;
     letter-spacing: 1px;
-    max-width: 1000px; /* Maksimum genişlik, metni daraltarak ortalamayı sağlar */
+    max-width: 800px; /* Maksimum genişlik, metni daraltarak ortalamayı sağlar */
     margin-left: auto;
     margin-right: auto;
     line-height: 25px;
@@ -502,69 +498,78 @@ nav {
     border-radius: 5px;
 }
 
-.footer__container {
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #262626;
+    width: 100%;
+    position: relative;
+  }
+  
+  .footer__container {
     display: grid;
     gap: 4rem 2rem;
-}
-
-.footer__col h4 {
+    max-width: 1200px; /* Maximum width to keep it centered */
+    width: 100%;
+    padding: 2rem;
+    margin: 0 auto; /* Center container */
+  }
+  
+  .footer__col h4 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text-dark);
-}
-
-.footer__col p {
+    color: #c8a379;
+  }
+  
+  .footer__col p {
     max-width: 350px;
     margin-bottom: 2rem;
-    color: var(--text-light);
-}
-
-.footer__links {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #faf7ee;
+  }
+  
+  .footer__links {
     display: grid;
     gap: 0.75rem;
-}
-
-.footer__links a {
-    color: var(--text-light);
-}
-
-.footer__links a:hover {
-    color: var(--primary-color);
-}
-
-.footer__media {
-    margin-bottom: 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-}
-
-.footer__socials {
+  }
+  
+  .footer__links a {
+    color: #fff;
+  }
+  
+  .footer__links a:hover {
+    color: #00606f;
+  }
+  
+  .footer__socials {
     display: flex;
     align-items: center;
     gap: 1rem;
-}
-
-.footer__socials a {
+  }
+  
+  .footer__socials a {
     padding: 3px 8px;
     font-size: 1.25rem;
-    color: var(--primary-color);
+    color: #00606f;
     background-color: var(--extra-light);
     border-radius: 5px;
-}
-
-.footer__socials a:hover {
-    color: var(--white);
-    background-color: var(--primary-color);
-}
-
-.footer__bar {
+  }
+  
+  .footer__socials a:hover {
+    /* color: var(--white); */
+    background-color: #c8a379;
+  }
+  
+  .footer__bar {
     padding: 1rem;
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: #e1f5fe;
     text-align: center;
-}
+  }
+  
 
 @media (width > 540px) {
     .article__grid {
@@ -633,6 +638,7 @@ nav {
         flex-direction: row;
         /* Menü bağlantılarını yatay hizalar */
         background-color: transparent;
+        backdrop-filter: blur(0);
         /* Arka planı şeffaf yapar */
         transform: none;
         gap: 2rem;
@@ -641,7 +647,7 @@ nav {
 
     .nav__links a {
         color: #c8a379;
-        font-size: 12px;
+        font-size: 15px;
         /* Menü bağlantı renkleri */
     }
 
@@ -673,6 +679,10 @@ nav {
         text-align: center;
         /* İçerik metinlerini ortalar */
     }
+    
+    .header__container p{
+        font-size: 80px;
+    }
 
     .header__container h1{
         font-size: 28px;
@@ -687,6 +697,18 @@ nav {
     .about__header {
         grid-template-columns: repeat(2, 1fr);
         /* Grid düzeni */
+    }
+
+    .about__header h3{
+        font-size: 63px;
+    }
+
+    .about__header h1{
+        font-size: 22px;
+    }
+
+    .about__header p{
+        font-size: 16px;
     }
 
     .about__grid {
@@ -1101,12 +1123,9 @@ hr.style-seven:before { /* Not really supposed to work, but does */
     border-radius: 20px;
 }
 
-/* body{
-	background: #1e1f21;
-    color: #fff;
+/* .wrapper{
 } */
-.wrapper{
-}
+
 #card-area{
     padding: 0 10%;
     margin-bottom: 50px;
@@ -1118,11 +1137,11 @@ hr.style-seven:before { /* Not really supposed to work, but does */
 }
 .box {
     width: 100%; /* Kutunun genişliğini %100 yaparak esnek bırakıyoruz */
-    height: 400px; /* Sabit bir yükseklik belirliyoruz */
+    height: 559px; /* Sabit bir yükseklik belirliyoruz */
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .box img {
@@ -1171,7 +1190,7 @@ hr.style-seven:before { /* Not really supposed to work, but does */
 	border-radius: 50px;
 	text-align: center;
 	padding: 5px 15px;
-    
+
 }
 
 .overlay p{
@@ -1182,4 +1201,187 @@ hr.style-seven:before { /* Not really supposed to work, but does */
 }
 .box:hover .overlay{
     height: 100%;
+}
+
+
+
+.row{
+    width: 100%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+    overflow-x: hidden;
+    padding:  5rem 0;
+}
+
+.row .imgWrapper{
+    overflow: hidden;
+}
+
+.row .imgWrapper img{
+    width: 100%;
+    /* height: 100%; */
+    height: 600px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.row .imgWrapper:hover img{
+    transform: scale(1.25);
+}
+
+.row .contentWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.row .contentWrapper span.textWrapper{
+    display: block;
+    font-size: 20px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.row .contentWrapper span.textWrapper span{
+    display: inline-block;
+    background: #0251ac;
+    width: 70px;
+    height: 5px;
+
+}
+
+.row .contentWrapper h2{
+    font-size: 64px;
+    font-weight: 300;
+    color: #c8a379;
+    line-height: 1.1;
+    letter-spacing: 0;
+    padding-bottom: 20px;
+
+}
+
+.row .contentWrapper p {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.row .contentWrapper a {
+    font-family: 'Poppins', sans-serif !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #00606f 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #c8a379;
+    padding: 15px 40px;
+    gap: 15px;
+    user-select: none;
+    transition: background-position 0.5s ease;
+}
+
+/* .row .contentWrapper a:hover {
+    background-position: left bottom;
+} */
+
+@media (max-width: 768px) {
+    .row{
+        grid-template-columns: 1fr;
+        grid-gap: 50px;
+    }
+
+    .row .contentWrapper{
+        padding-left: 0px;
+    }
+
+    .row .contentWrapper span.textWrapper{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 540px){
+    .row{
+        width: 100%;
+    }
+
+    .row .contentWrapper h2{
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .row .contentWrapper p{
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+    .row .contentWrapper span.textWrapper{
+        font-size: 12px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row .imgWrapper img{
+        height: 400px;
+    }
+}
+
+
+.arrow {
+    position: relative;
+    top: 50%;
+    left: -20px;
+    transform: translate(-50%, -50%);
+    transform: rotate(270deg);
+    cursor: pointer;
+}
+
+.arrow span {
+    display: block;
+    width: 10px; /* Boyutu sabitledik */
+    height: 10px;
+    border-bottom: 3px solid #003366;
+    border-right: 3px solid #003366;
+    transform: rotate(45deg);
+    margin: -2px;
+    /* animation: animate 2s infinite; */
+}
+
+.row .contentWrapper a:hover .arrow span {
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(10px, 10px);
+    }
 }

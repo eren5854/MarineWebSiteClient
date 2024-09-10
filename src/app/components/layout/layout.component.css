@@ -1,0 +1,68 @@
+/* .nav-bottom{
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  } */
+
+.container {
+    max-width: 100%;
+    /* margin-left: 1rem; */
+    margin-right: 1rem;
+}
+
+.nav-bottom {
+    width: 100%; /* Genişliği tam yapıyoruz */
+    position: fixed;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center; /* Menüyü yatay olarak ortalamak için */
+    align-items: center;
+}
+
+.nav__menu {
+    background-color: hsla(220, 32%, 16%, .8);
+    width: 40%;
+    border-radius: 4rem;
+    padding: 1rem 2.25rem;
+    backdrop-filter: blur(5px);
+    transition: .4s;
+    margin: 0 auto; /* Menü tamamen ortalanacak */
+}
+
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__link {
+    color: hsl(220, 8%, 75%);
+    ;
+    font-size: 1.25rem;
+    padding: .4rem;
+    display: flex;
+    border-radius: 5rem;
+}
+
+
+/* Active link */
+.active-link {
+    background: linear-gradient(180deg,
+            hsla(200, 90%, 45%, 1),
+            hsla(200, 90%, 45%, .2));
+    box-shadow: 0 0 16px hsla(200, 90%, 45%, .4);
+    color: hsl(220, 15%, 95%);
+    ;
+}
+
+Change background header
+.scroll-header {
+    box-shadow: 0 4px 4px hsla(0, 0%, 4%, .3);
+}
+
+@media (max-width: 768px) {
+    .nav__menu {
+      width: 80%; /* Küçük ekranlarda menüyü daha geniş yapabilirsiniz */
+    }
+  }

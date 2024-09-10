@@ -1,14 +1,16 @@
 <section class="section__container about__container" id="about">
     <div class="about__header">
       <div>
-        <h3 class="section__subheader">Time Matters Most</h3>
-        <h1 class="section__header">
+        <h3 class="section__subheader reveal-bottom-1">Time Matters Most</h3>
+        <h1 class="section__header reveal-bottom-2">
           Past - Present - Future
         </h1>
       </div>
-      <p class="section__description">
+      <p class="section__description reveal-bottom-2">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis omnis facere quidem laboriosam, placeat autem veritatis aliquid est! Sit nemo suscipit excepturi et nulla similique eum eius repudiandae sint neque.
+
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio vero repellat nemo atque ipsam laborum quos natus, eius, iure quae reprehenderit similique in possimus veritatis ullam modi earum error asperiores.
+
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptates? Animi, est praesentium suscipit temporibus unde quis, architecto modi quae dolores distinctio repudiandae non nobis rem dolor error dignissimos omnis.
       </p>
     </div>
@@ -29,7 +31,7 @@
     </div> -->
 </section>
 
-<section class="section__container about__container">
+<section class="section__container" id="services">
     <div style="margin-top: -70px;" class="about__header">
         <div>
           <h3 class="section__subheader">Services</h3>
@@ -39,24 +41,25 @@
     <div id="card-area">
 		<div class="wrapper">
 			<div class="box-area">
-				<div class="box">
+				<div [ngClass]="{'reveal-left-1': !isScreenSizeUnder768px,
+          'reveal-scale-1': isScreenSizeUnder768px}" class="box">
 					<img alt="" src="/assets/article-1.jpg">
 					<div class="overlay">
-						<h3>Mountaineering</h3>
+						<h3>Title</h3>
 						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam. Quod.</p><a href="#">Book Now</a>
 					</div>
 				</div>
-				<div class="box">
+				<div [ngClass]="{'reveal-bottom-1': !isScreenSizeUnder768px, 'reveal-scale-1': isScreenSizeUnder768px}"  class="box">
 					<img alt="" src="/assets/article-2.jpg">
 					<div class="overlay">
-						<h3>Scuba Diving</h3>
+						<h3>Title</h3>
 						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam. Quod.</p><a href="#">Book Now</a>
 					</div>
 				</div>
-				<div class="box">
+				<div [ngClass]="{'reveal-right-1': !isScreenSizeUnder768px, 'reveal-scale-1': isScreenSizeUnder768px}"  class="box ">
 					<img alt="" src="/assets/article-3.jpg">
 					<div class="overlay">
-						<h3>Travel World</h3>
+						<h3>TITLE</h3>
 						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque modi explicabo libero ea nam. Quod.</p><a href="#">Book Now</a>
 					</div>
 				</div>
@@ -64,4 +67,120 @@
 		</div>
 	</div>
     <hr class="style-seven">
+</section>
+
+<section class="section__container" id="portfolio">
+  <div style="margin-top: -70px;" class="about__header">
+    <div>
+      <h3 class="section__subheader">Portfolio</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="imgWrapper reveal-scale-1">
+      <img src="https://r4.wallpaperflare.com/wallpaper/743/395/681/maersk-maersk-line-container-ship-sea-wallpaper-f1dd630ce0a739778ff1d566007d7fe3.jpg" alt="">
+    </div>
+    <div class="contentWrapper">
+      <div class="content">
+        <span class="textWrapper">
+          <span></span>
+          <h1>Amels 60</h1>
+          <span></span>
+        </span>
+        <h2>Lorem ipsum dolor sit amet</h2>
+        <p>This award-winning 60-metre (197ft) Amels Limited Editions design has been turning heads since her introduction in 2019. A next-generation semi-custom Amels that blends heritage with sophisticated technology, taking the superyacht industry’s greatest success story into the future. Just like the global fleet of close to 50 Limited Editions yachts at sea today, this sought-after Amels 60 is fast becoming become the collectors’ item for tomorrow’s generation of yacht owners, popular for both charter and private use.</p>
+        <a href="#">
+          <div class="arrow">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          Read More...</a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="isScreenSizeUnder768px" class="imgWrapper  reveal-scale-1">
+      <img src="https://r4.wallpaperflare.com/wallpaper/79/492/970/boat-yachts-interior-wallpaper-e8063cfadfecc7099e7099b2f2093b70.jpg" alt="">
+    </div>
+    <div class="contentWrapper">
+      <div class="content">
+        <span class="textWrapper">
+          <span></span>
+          <h1>Amels 60</h1>
+          <span></span>
+        </span>
+        <h2>Building your Dream</h2>
+        <p>This award-winning 60-metre (197ft) Amels Limited Editions design has been turning heads since her introduction in 2019. A next-generation semi-custom Amels that blends heritage with sophisticated technology, taking the superyacht industry’s greatest success story into the future. Just like the global fleet of close to 50 Limited Editions yachts at sea today, this sought-after Amels 60 is fast becoming become the collectors’ item for tomorrow’s generation of yacht owners, popular for both charter and private use.</p>
+        <a href="#">
+          <div class="arrow">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          Read More...</a>
+
+      </div>
+    </div>
+    <div *ngIf="!isScreenSizeUnder768px" class="imgWrapper reveal-scale-1">
+      <img src="https://r4.wallpaperflare.com/wallpaper/79/492/970/boat-yachts-interior-wallpaper-e8063cfadfecc7099e7099b2f2093b70.jpg" alt="">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="imgWrapper reveal-scale-1">
+      <img src="https://c1.wallpaperflare.com/path/179/337/151/coast-turquoise-sea-ocean-2d82829e00760a13be077b4903969905.jpg" alt="">
+    </div>
+    <div class="contentWrapper">
+      <div class="content">
+        <span class="textWrapper">
+          <span></span>
+          <h1>Amels 60</h1>
+          <span></span>
+        </span>
+        <h2>Sailing Beyond Tradition</h2>
+        <p>This award-winning 60-metre (197ft) Amels Limited Editions design has been turning heads since her introduction in 2019. A next-generation semi-custom Amels that blends heritage with sophisticated technology, taking the superyacht industry’s greatest success story into the future. Just like the global fleet of close to 50 Limited Editions yachts at sea today, this sought-after Amels 60 is fast becoming become the collectors’ item for tomorrow’s generation of yacht owners, popular for both charter and private use.</p>
+        <a href="#">
+          <div class="arrow">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          Read More...</a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngIf="isScreenSizeUnder768px" class="imgWrapper  reveal-scale-1">
+      <img src="https://r4.wallpaperflare.com/wallpaper/376/801/202/yacht-vehicle-lamborghini-terzo-millennio-luxury-yacht-wallpaper-78266d5810c0fc6820ec11de7812745a.jpg" alt="">
+    </div>
+    <div class="contentWrapper">
+      <div class="content">
+        <span class="textWrapper">
+          <span></span>
+          <h1>Amels 60</h1>
+          <span></span>
+        </span>
+        <h2>Limited Editions</h2>
+        <p>This award-winning 60-metre (197ft) Amels Limited Editions design has been turning heads since her introduction in 2019. A next-generation semi-custom Amels that blends heritage with sophisticated technology, taking the superyacht industry’s greatest success story into the future. Just like the global fleet of close to 50 Limited Editions yachts at sea today, this sought-after Amels 60 is fast becoming become the collectors’ item for tomorrow’s generation of yacht owners, popular for both charter and private use.</p>
+        
+        <a href="#">
+          <div class="arrow">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          Read More...</a>
+      </div>
+    </div>
+    <div *ngIf="!isScreenSizeUnder768px" class="imgWrapper reveal-scale-1">
+      <img src="https://r4.wallpaperflare.com/wallpaper/376/801/202/yacht-vehicle-lamborghini-terzo-millennio-luxury-yacht-wallpaper-78266d5810c0fc6820ec11de7812745a.jpg" alt="">
+    </div>
+  </div>
+  <!-- <section id="footer"></section> -->
+  <!-- <hr class="style-seven"> -->
 </section>
