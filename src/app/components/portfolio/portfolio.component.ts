@@ -1,25 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import * as AOS from 'aos';
 import { LayoutComponent } from '../layout/layout.component';
 
-
 @Component({
-  selector: 'app-home',
+  selector: 'app-portfolio',
   standalone: true,
-  imports: [FormsModule, CommonModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [CommonModule, FormsModule, RouterLink],
+  templateUrl: './portfolio.component.html',
+  styleUrl: './portfolio.component.css'
 })
-export class HomeComponent {
+export class PortfolioComponent {
+  isMenuOpen = false;
   isScreenSizeUnder768px = false;
 
-  title: string = "Marqex"
-  backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/yacht-2.jpg")'
+  title: string = "Portfolio";
+  backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/yacht-3.jpg")'
 
   constructor(
+    private router: Router,
     private layout: LayoutComponent
   ) {
     this.checkWindowSize();
@@ -29,10 +30,7 @@ export class HomeComponent {
     //   delay: 200,
     //   once: false
     // }); // AOS'u başlat
-  }
-
-  ngOnInit() {
-
+    // AOS.refreshHard();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -42,8 +40,10 @@ export class HomeComponent {
 
   checkWindowSize(): void {
     if (window.innerWidth < 768) {
-      this.isScreenSizeUnder768px = true
+      console.log('Ekran boyutu 768px altında.');
+      this.isScreenSizeUnder768px = true;
     } else {
+      console.log('Ekran boyutu 768px veya üzerinde.');
       this.isScreenSizeUnder768px = false;
     }
   }

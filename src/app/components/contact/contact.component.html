@@ -1,0 +1,151 @@
+<section id="home">
+    <header class="header">
+        <nav>
+            <div class="nav__header">
+                <div data-aos="fade-right" data-aos-once="true" class="nav__logo">
+                    <a routerLink="/">MAR<span>QEX</span></a>
+                </div>
+                <div class="nav__menu__btn" id="menu-btn">
+                    <span (click)="toggleMenu()"><i class="ri-menu-line"></i></span>
+                </div>
+            </div>
+            <ul class="nav__links " id="nav-links">
+                <li data-aos="fade-down"><a routerLink="/portfolio">Portfolio</a></li>
+                <li data-aos="fade-down"><a routerLink="/about">About Us</a></li>
+                <li data-aos="fade-down"><a routerLink="/contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section class="section__container">
+            <div class="container">
+                @if (isScreenSizeUnder768px) {
+                    
+                    <div class="contactInfo">
+                        <div>
+    
+                            <h2>Contact Info</h2>
+                            <ul class="info">
+                                <li>
+                                    <span><i class='bx bxs-location-plus'></i></span>
+                                    <span>
+                                        Address Address Address Address Address Address
+                                    </span>
+                                </li>
+                                <li>
+                                    <span><i class='bx bxs-envelope'></i></span>
+                                    <span>
+                                        lorem&#64;ipsum.com
+                                    </span>
+                                </li>
+                                <li>
+                                    <span><i class='bx bxs-phone'></i></span>
+                                    <span>
+                                        05555555555
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="sci">
+                            <li><a href=""><i class="ri-facebook-fill"></i></a></li>
+                            <li><a href=""><i class="ri-twitter-fill"></i></a></li>
+                            <li><a href=""><i class="ri-instagram-fill"></i></a></li>
+                            <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
+                        </ul>
+                    </div>
+    
+                    <div  class="contactForm">
+                        <h2>Send Message</h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Name Surname</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Company</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Phone Number</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Email</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <textarea name="" id="" required></textarea>
+                                <span>Write your message</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Send">
+                                <!-- <i class='bx bx-mail-send'></i> -->
+                            </div>
+                        </div>
+                    </div>
+                }@else {
+                    <div data-aos="fade-right" class="contactInfo">
+                        <div>
+                            <h2>Contact Info</h2>
+                            <ul class="info">
+                                <li>
+                                    <span><i class='bx bxs-location-plus'></i></span>
+                                    <span>
+                                        Address Address Address Address Address Address
+                                    </span>
+                                </li>
+                                <li>
+                                    <span><i class='bx bxs-envelope'></i></span>
+                                    <span>
+                                        lorem&#64;ipsum.com
+                                    </span>
+                                </li>
+                                <li>
+                                    <span><i class='bx bxs-phone'></i></span>
+                                    <span>
+                                        05555555555
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="sci">
+                            <li><a href=""><i class="ri-facebook-fill"></i></a></li>
+                            <li><a href=""><i class="ri-twitter-fill"></i></a></li>
+                            <li><a href=""><i class="ri-instagram-fill"></i></a></li>
+                            <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
+                        </ul>
+                    </div>
+    
+                    <div data-aos="fade-left" class="contactForm">
+                        <h2>Send Message</h2>
+                        <div class="formBox">
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Name Surname</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Company</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Phone Number</span>
+                            </div>
+                            <div class="inputBox w50">
+                                <input type="text" required>
+                                <span>Email</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <textarea name="" id="" required></textarea>
+                                <span>Write your message</span>
+                            </div>
+                            <div class="inputBox w100">
+                                <input type="submit" value="Send">
+                                <!-- <i class='bx bx-mail-send'></i> -->
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+    </header>
+</section>

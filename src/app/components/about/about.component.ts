@@ -1,58 +1,49 @@
+import { Component, ElementRef, HostListener, ViewChild,  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { IonList } from "@ionic/angular/standalone";
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
-import { IonIcon } from "@ionic/angular/standalone";
+import { Router, RouterLink } from '@angular/router';
 import * as AOS from 'aos';
-import { filter } from 'rxjs';
+import { LayoutComponent } from '../layout/layout.component';
+
 
 @Component({
-  selector: 'app-layout',
+  selector: 'app-about',
   standalone: true,
-  imports: [IonIcon, RouterOutlet, FormsModule, CommonModule, RouterLink],
-  templateUrl: './layout.component.html',
-  styleUrl: './layout.component.css'
+  imports: [IonList, CommonModule, RouterLink],
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class LayoutComponent {
+export class AboutComponent {
   isMenuOpen = false;
   isScreenSizeUnder768px = false;
   isNavigateOpen = false;
 
-  title:string = "Marteq"
-  backgroundImage:string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/yacht-2.jpg")'
+  title:string = "About";
+  backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url("/assets/yacht-1.jpg")'
   
   private scrollHandler: () => void;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private layout: LayoutComponent
   ) {
     this.scrollHandler = this.scrollActive.bind(this);
     this.checkWindowSize();
+    this.layout.setTitle(this.title, this.backgroundImage);
     AOS.init({
       duration: 2000,
       delay:200,
       once:true
     }); // AOS'u başlat
-    
   }
 
-  setTitle(newTitle: string, newBackground: string) {
-    this.title = newTitle;
-    this.backgroundImage = newBackground;
-  }
-
-  reload(){
-    location.reload();
-  }
-
-  ngOnInit(): void {
-    
+  ngOnInit(){
     window.addEventListener('scroll', this.scrollHandler);
   }
 
-  startAos(){
-    AOS.refreshHard();
-  }
+  // ngOnInit(): void {
+  // }
 
   ngOnDestroy(): void {
     window.removeEventListener('scroll', this.scrollHandler);
@@ -87,7 +78,7 @@ export class LayoutComponent {
   
     sections.forEach(current => {
       const sectionHeight = (current as HTMLElement).offsetHeight;
-      const sectionTop = (current as HTMLElement).offsetTop - 700;
+      const sectionTop = (current as HTMLElement).offsetTop - 700; 
       const sectionId = (current as HTMLElement).getAttribute('id') || '';
   
       const link = document.querySelector(`.nav__menu a[href*="${sectionId}"]`);
