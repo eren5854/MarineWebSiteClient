@@ -52,14 +52,9 @@
               }
             ],
             "styles": [
-              "node_modules/aos/dist/aos.css",
-              "node_modules/swiper/swiper-bundle.min.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/aos/dist/aos.js",
-              "/public/js/main.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

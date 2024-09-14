@@ -1,18 +1,19 @@
 <section id="home">
-  <header  [ngStyle]="{'background-image': backgroundImage}" class="header">
+
+  <header class="header">
       <nav>
         <div class="nav__header">
-          <div data-aos="fade-right" class="nav__logo">
-            <a href="/">MAR<span>QEX</span></a>
+          <div [ngClass]="{'reveal-left-1': !isScreenSizeUnder768px}" class="nav__logo">
+            <a (click)="navigateOpen();" href="#">MAR<span>TEQ</span></a>
           </div>
           <div class="nav__menu__btn" id="menu-btn">
             <span (click)="toggleMenu()"><i class="ri-menu-line"></i></span>
           </div>
         </div>
         <ul class="nav__links " id="nav-links">
-          <li data-aos="fade-down"><a href="/portfolio">Portfolio</a></li>
-          <li data-aos="fade-down"><a href="/about">About Us</a></li>
-          <li data-aos="fade-down"><a href="/contact">Contact</a></li>
+          <li [ngClass]="{'reveal-top-1': !isScreenSizeUnder768px}"><a href="#home">Portfolio</a></li>
+          <li [ngClass]="{'reveal-top-1': !isScreenSizeUnder768px}"><a href="#article">Services</a></li>
+          <li [ngClass]="{'reveal-top-1': !isScreenSizeUnder768px}"><a href="#about">About</a></li>
           <!-- <li><a href="#client">Bulletin</a></li>
           <li><a href="#contact">Contact</a></li> -->
         </ul>
@@ -21,8 +22,8 @@
         </div> -->
       </nav>
       <div class="section__container header__container" id="home">
-        <p data-aos="fade-up">{{title}}</p>
-        <h1 data-aos="fade-down">Slogan Buraya Yazılacak</h1>
+        <p class="reveal-bottom-1">MARTEQ</p>
+        <h1 class="reveal-top-1">Slogan Buraya Yazılacak</h1>
         <div class="header__flex">
           <!-- <div class="header__card">
             <span><i class="ri-store-2-fill"></i></span>
@@ -54,7 +55,7 @@
               <span class="link__text"></span>
           </a> -->
   
-          <div class="mouse_scroll" data-aos="fade-up">
+          <div class="mouse_scroll reveal-bottom-1">
   
               <div class="mouse">
                   <div class="wheel"></div>
@@ -83,19 +84,27 @@
           industrial solutions, we have evolved into a trusted partner for
           businesses seeking cutting-edge products and unparalleled support.
         </p>
-        <button routerLink="/contact" class="btn">Contact Us</button>
+        <button class="btn">Contact Us</button>
       </div>
       <div class="footer__col">
         <h4>Quick Links</h4>
         <ul class="footer__links">
-          <li><a href="/portfolio">Portfolio</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h4>Social Media</h4>
+        <!-- <div class="footer__media">
+          <img src="assets/media-1.jpg" alt="media" />
+          <img src="assets/media-2.jpg" alt="media" />
+          <img src="assets/media-3.jpg" alt="media" />
+          <img src="assets/media-4.jpg" alt="media" />
+          <img src="assets/media-5.jpg" alt="media" />
+          <img src="assets/media-6.jpg" alt="media" />
+        </div> -->
         <div class="footer__socials">
           <a href="#"><i class="ri-facebook-fill"></i></a>
           <a href="#"><i class="ri-twitter-fill"></i></a>
@@ -105,7 +114,7 @@
       </div>
     </div>
     <div class="footer__bar">
-      Copyright © 2024 Marqex. All rights reserved.
+      Copyright © 2024 Marteq. All rights reserved.
     </div>
   </footer>
 </section>
