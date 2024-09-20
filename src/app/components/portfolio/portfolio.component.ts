@@ -17,7 +17,7 @@ export class PortfolioComponent {
   isScreenSizeUnder768px = false;
 
   title: string = "Portfolio";
-  backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/yacht-3.jpg")'
+  backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/portfolio.jpg")'
 
   constructor(
     private router: Router,

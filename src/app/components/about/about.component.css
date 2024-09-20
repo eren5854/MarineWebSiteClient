@@ -3,6 +3,41 @@
         url("/assets/yacht-1.jpg");
 }
 
+.full-width-image {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px; /* Kenarlardan boşluk bırakmamak için */
+    padding: 0;
+    overflow: hidden;
+}
+
+.full-width-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmin içeriğe göre kırpılmasını sağlar, taşmayı engeller */
+}
+
+.about__section{
+    margin-top: 50px;
+}
+
+.about__section p{
+    margin-bottom: 50px; 
+    padding: 20px;
+}
+
+@media (max-width: 768px){
+    .full-width-image {
+        display: flex;
+        width: 100%;
+        height: 200px;
+        margin-bottom: 10px; /* Kenarlardan boşluk bırakmamak için */
+        padding: 0;
+        overflow: hidden;
+    }
+}
+
 /* .swiper {
     padding-top: 40px;
     max-width: 1200px;

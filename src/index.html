@@ -21,8 +21,32 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <script>
-    
+    const btns = document.querySelectorAll('.btn-2');
+    const dropMenus = document.querySelectorAll('.drop-menu');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        removeActive();
+        btn.classList.add('active');
+        document.querySelector(btn.dataset.target).classList.add('active');
+      })
+    })
+
+    const removeActive = () => {
+      btns.forEach(btn => btn.classList.remove('active'));
+      dropMenus.forEach(dropmenu => dropmenu.classList.remove('active'));
+    }
+
+    window.onclick = (e) => {
+      if (!e.target.matches('.btn-2')) {
+        removeActive()
+      }
+    }
   </script>
 </body>
 

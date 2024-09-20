@@ -17,7 +17,7 @@ export class HomeComponent {
   isScreenSizeUnder768px = false;
 
   title: string = "Marqex"
-  backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/yacht-2.jpg")'
+  backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/home.jpg")'
 
   constructor(
     private layout: LayoutComponent

@@ -20,7 +20,7 @@ export class AboutComponent {
   isNavigateOpen = false;
 
   title:string = "About";
-  backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url("/assets/yacht-1.jpg")'
+  backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url("/assets/about-top.jpg")'
   
   private scrollHandler: () => void;
 
