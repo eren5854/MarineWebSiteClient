@@ -4,6 +4,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
+import { PortfolioItemComponent } from './components/portfolio-item/portfolio-item.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,10 @@ export const routes: Routes = [
             {
                 path: "about",
                 component: AboutComponent
+            },
+            {
+                path: "portfolio/:title",
+                component: PortfolioItemComponent
             }
         ]
     },

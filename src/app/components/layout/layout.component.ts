@@ -5,7 +5,7 @@ import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router
 import { IonIcon } from "@ionic/angular/standalone";
 import * as AOS from 'aos';
 import { filter } from 'rxjs';
-import { gsap, Power2 } from 'gsap'; // GSAP ve Power2 kütüphanesini dahil et
+import { gsap, Power2 } from 'gsap';
 
 @Component({
   selector: 'app-layout',
@@ -22,19 +22,15 @@ export class LayoutComponent {
   title: string = "Marteq"
   backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/home.jpg")'
 
-  private scrollHandler: () => void;
-
   constructor(
     private router: Router
   ) {
-    this.scrollHandler = this.scrollActive.bind(this);
     this.checkWindowSize();
     AOS.init({
-      duration: 2000,
+      duration: 3000,
       delay: 200,
       once: true
     }); // AOS'u başlat
-
   }
 
   setTitle(newTitle: string, newBackground: string) {
@@ -49,15 +45,10 @@ export class LayoutComponent {
   ngOnInit(): void {
     this.initializeGsapAnimations();
     this.showSubMenu()
-    window.addEventListener('scroll', this.scrollHandler);
   }
 
   startAos() {
     AOS.refreshHard();
-  }
-
-  ngOnDestroy(): void {
-    window.removeEventListener('scroll', this.scrollHandler);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -81,26 +72,6 @@ export class LayoutComponent {
     if (navLinks) {
       // navLinks.classList.toggle('open', this.isMenuOpen);
     }
-  }
-
-  scrollActive = (): void => {
-    const sections = document.querySelectorAll<HTMLElement>('section[id]');
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(current => {
-      const sectionHeight = (current as HTMLElement).offsetHeight;
-      const sectionTop = (current as HTMLElement).offsetTop - 700;
-      const sectionId = (current as HTMLElement).getAttribute('id') || '';
-
-      const link = document.querySelector(`.nav__menu a[href*="${sectionId}"]`);
-      if (link) {
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          (link as HTMLElement).classList.add('active-link');
-        } else {
-          (link as HTMLElement).classList.remove('active-link');
-        }
-      }
-    });
   }
 
   initializeGsapAnimations() {
@@ -220,22 +191,24 @@ export class LayoutComponent {
   showSubMenu() {
     const portfolioLink = document.querySelector('.btn-2') as HTMLElement;
     const navElement2 = document.querySelector('.nav-element-2') as HTMLElement;
+    const arrowIcon = document.querySelector('.arrow-4-1') as HTMLElement;
+    let isOpen = false;
     let timeoutId: any | null = null;
     if (window.innerWidth >= 768) {
-      
+
       // Portfolio'ya hover yapıldığında
       portfolioLink.addEventListener('mouseenter', () => {
         clearTimeout(timeoutId!); // Önceki timeout'u temizle
         navElement2.style.display = 'block';
         navElement2.style.opacity = '1'; // Hızla görünür hale getir
       });
-    
+
       // Alt menü öğesine mouse ile gelindiğinde opaklığı koru
       navElement2.addEventListener('mouseenter', () => {
         clearTimeout(timeoutId!); // Önceki timeout'u temizle
         navElement2.style.opacity = '1';
       });
-    
+
       // Portfolio'dan mouse ayrıldığında
       portfolioLink.addEventListener('mouseleave', () => {
         timeoutId = setTimeout(() => {
@@ -245,7 +218,7 @@ export class LayoutComponent {
           }, 300);  // Opaklık sıfıra düştükten sonra gizle
         }, 300); // 300ms gecikme ekledik
       });
-    
+
       // Alt menü öğesinden mouse ayrıldığında gizle
       navElement2.addEventListener('mouseleave', () => {
         timeoutId = setTimeout(() => {
@@ -255,7 +228,19 @@ export class LayoutComponent {
           }, 300);  // Opaklık sıfıra düştükten sonra gizle
         }, 300); // 300ms gecikme ekledik
       });
+
+    }
+    else{
+      arrowIcon.addEventListener('click', () => {
+        if (!isOpen) {
+          navElement2.classList.add('show');
+          arrowIcon.classList.add('rotate');
+        } else {
+          navElement2.classList.remove('show');
+          arrowIcon.classList.remove('rotate');
+        }
+        isOpen = !isOpen;
+      });
     }
   }
-
 }

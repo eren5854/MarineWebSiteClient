@@ -47,4 +47,10 @@ export class PortfolioComponent {
       this.isScreenSizeUnder768px = false;
     }
   }
+
+  routerClick(url:string){
+    this.router.navigate([`/portfolio/${url}`]).then(() => {
+      window.scrollTo(0, 0); // Sayfanın en üstüne kaydır
+    });
+  }
 }

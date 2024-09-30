@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-@import url('https://fonts.googleapis.com/css?family=Oswald');
+/* @import url('https://fonts.googleapis.com/css?family=Oswald'); */
 
 @font-face {
     font-family: 'Futura';
@@ -9,7 +7,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 
 :root {
     --primary-color: #1e90ff;
@@ -24,7 +21,7 @@
     /* Çok açık mavi */
     --white: #ffffff;
     /* Beyaz (değişmedi) */
-    --max-width: 1200px;
+    --max-width: 1800px;
     /* Maksimum genişlik (değişmedi) */
 }
 
@@ -69,6 +66,7 @@
     border-radius: 5px;
     transition: 0.3s;
     cursor: pointer;
+    font-size: 16px;
     margin-top: 2rem; 
 }
 
@@ -92,6 +90,7 @@ ul {
 
 html,
 body {
+    font-family: 'Futura', sans-serif;
     scroll-behavior: smooth;
     background: #faf7ee;
 }
@@ -130,6 +129,12 @@ nav {
     color: #1c75d2;
 }
 
+.nav__logo img {
+    width: 100px;
+    /* margin-left: -50%; */
+    /* height: 100px; */
+}
+
 .nav__menu__btn {
     font-size: 1.5rem;
     color: #c8a379;
@@ -159,10 +164,11 @@ nav {
 }
 
 .nav__links a {
-    font-family: 'Poppins' sans-serif !important;
+    /* font-family: 'Poppins' sans-serif !important; */
     font-size: 17px;
     color: inherit;
-    color: #c8a379;
+    /* color: #c8a379; */
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 3.43px;
     user-select: none;
@@ -245,7 +251,7 @@ nav {
 }
 
 .about__header h1 {
-    font-family: Poppins, sans-serif;
+    /* font-family: Poppins, sans-serif; */
     color: #c8a379;
     margin: 1rem 0;
     font-size: 16px;
@@ -257,7 +263,7 @@ nav {
 .about__header p {
     color: #191919;
     margin-top: 3rem;
-    font-family: Poppins, sans-serif;
+    /* font-family: Poppins, sans-serif; */
     font-weight: 300;
     font-size: 12px;
     letter-spacing: 1px;
@@ -604,7 +610,7 @@ footer {
 
 @media (width > 768px) {
     .header {
-        height: 100vh;
+        /* height: 100vh; */
     }
 
     nav {
@@ -632,13 +638,21 @@ footer {
     }
 
     .nav__logo {
-        position: static;
-        /* Küçük ekranlarda olduğu gibi ortalanmış */
-        text-align: center;
-        /* Logoyu ortalar */
+        position: relative;
+        width: 80%;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        /* text-align: center; */
+    }
+
+    .nav__logo img{
+        margin-right: 10%;
+        width: 225px;
     }
 
     .nav__logo a {
+        margin-right: 5%;
         font-size: 3rem;
         color: var(--white);
     }
@@ -656,18 +670,16 @@ footer {
         position: static;
         padding: 0;
         width: 70%;
+        margin-top: -50px;
         flex-direction: row;
-        /* Menü bağlantılarını yatay hizalar */
         background-color: transparent;
         backdrop-filter: blur(0);
-        /* Arka planı şeffaf yapar */
         transform: none;
-        gap: 2rem;
-        /* Menü elemanları arasındaki boşluk */
+        gap: 1rem;
     }
 
     .nav__links a {
-        color: #c8a379;
+        color: #fff;
         font-size: 12px;
         /* Menü bağlantı renkleri */
     }
@@ -729,43 +741,37 @@ footer {
     }
 
     .about__header p {
-        font-size: 16px;
+        font-size: 18px;
+        /* text-align: justify; */
     }
 
     .about__grid {
         grid-template-columns: repeat(3, 1fr);
-        /* Grid düzeni */
     }
 
     .about__card {
         padding: 5rem 2rem;
-        /* Kart içi boşluklar */
     }
 
     .faq__container {
         grid-template-columns: repeat(2, 1fr);
-        /* Grid düzeni */
     }
 
     .article__grid {
         grid-template-columns: repeat(3, 1fr);
-        /* Grid düzeni */
     }
 
     .banner__container {
         grid-template-columns: repeat(2, 1fr);
-        /* Grid düzeni */
         align-items: center;
     }
 
     .footer__container {
         grid-template-columns: 2fr 1fr 1.5fr;
-        /* Grid düzeni */
     }
 
     .footer__col:first-child {
         grid-area: unset;
-        /* Grid alanını sıfırlar */
     }
 
     .btn{
@@ -784,7 +790,6 @@ footer {
         font-size: 24px;
     }
     
-    /* Fix the typo */
     .close-h2 {
         z-index: 10;
         color: #fff;
@@ -799,6 +804,12 @@ footer {
 }
 
 @media (width > 1024px) {
+    .header{
+        /* background-position: left bottom !important; */
+        background-size: cover;  
+        height: 100vh;
+    }
+
     .article__grid {
         gap: 2rem;
     }
@@ -823,7 +834,6 @@ footer {
     -ms-transform: rotate(45deg);
     /* IE 9 */
     -webkit-transform: rotate(45deg);
-    /* Chrome, Safari, Opera */
     transform: rotate(45deg);
 
     border-right: 2px solid white;
@@ -1066,7 +1076,6 @@ hr.style-seven {
 }
 
 hr.style-seven:before {
-    /* Not really supposed to work, but does */
     display: block;
     content: "";
     height: 30px;
@@ -1076,9 +1085,6 @@ hr.style-seven:before {
     border-width: 0 0 1px 0;
     border-radius: 20px;
 }
-
-/* .wrapper{
-} */
 
 #card-area {
     padding: 0 10%;
@@ -1166,180 +1172,3 @@ hr.style-seven:before {
 .box:hover .overlay {
     height: 100%;
 }
-
-/* .row {
-    width: 100%;
-    max-width: 1170px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 50px;
-    overflow-x: hidden;
-    padding: 5rem 0;
-}
-
-.row .imgWrapper {
-    overflow: hidden;
-}
-
-.row .imgWrapper img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    transition: 0.3s;
-}
-
-.row .imgWrapper:hover img {
-    transform: scale(1.25);
-}
-
-.row .contentWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 30px;
-}
-
-.row .contentWrapper span.textWrapper {
-    display: block;
-    font-size: 20px;
-    text-transform: capitalize;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.row .contentWrapper span.textWrapper span {
-    display: inline-block;
-    background: #0251ac;
-    width: 70px;
-    height: 5px;
-
-}
-
-.row .contentWrapper h2 {
-    font-size: 64px;
-    font-weight: 300;
-    color: #c8a379;
-    line-height: 1.1;
-    letter-spacing: 0;
-    padding-bottom: 20px;
-
-}
-
-.row .contentWrapper p {
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 16px;
-    line-height: 25px;
-    padding-bottom: 25px;
-    letter-spacing: 1px;
-}
-
-.row .contentWrapper a {
-    font-family: 'Poppins', sans-serif !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    background: linear-gradient(90deg, #00606f 50%, transparent 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    color: #c8a379;
-    padding: 15px 40px;
-    gap: 15px;
-    user-select: none;
-    transition: background-position 0.5s ease;
-}
-
-@media (max-width: 768px) {
-    .row {
-        grid-template-columns: 1fr;
-        grid-gap: 50px;
-    }
-
-    .row .contentWrapper {
-        padding-left: 0px;
-    }
-
-    .row .contentWrapper span.textWrapper {
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-@media (max-width: 540px) {
-    .row {
-        width: 100%;
-    }
-
-    .row .contentWrapper h2 {
-        font-size: 30px;
-        padding-bottom: 20px;
-    }
-
-    .row .contentWrapper p {
-        font-size: 12px;
-        line-height: 24px;
-    }
-
-    .row .contentWrapper span.textWrapper {
-        font-size: 12px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .row .imgWrapper img {
-        height: 400px;
-    }
-} */
-
-
-/* .arrow {
-    position: relative;
-    top: 50%;
-    left: -20px;
-    transform: translate(-50%, -50%);
-    transform: rotate(270deg);
-    cursor: pointer;
-}
-
-.arrow span {
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-bottom: 3px solid #003366;
-    border-right: 3px solid #003366;
-    transform: rotate(45deg);
-    margin: -2px;
-}
-
-.row .contentWrapper a:hover .arrow span {
-    animation: animate 2s infinite;
-}
-
-.arrow span:nth-child(2) {
-    animation-delay: -0.2s;
-}
-
-.arrow span:nth-child(3) {
-    animation-delay: -0.4s;
-}
-
-@keyframes animate {
-    0% {
-        opacity: 0;
-        transform: rotate(45deg) translate(-20px, -20px);
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        transform: rotate(45deg) translate(10px, 10px);
-    }
-} */

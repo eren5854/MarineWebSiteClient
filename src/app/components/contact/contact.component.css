@@ -3,11 +3,18 @@
         url("https://www.shutterstock.com/shutterstock/photos/2359635321/display_1500/stock-photo-stunning-waves-in-seychelles-islands-2359635321.jpg");
 }
 
+.section__container{
+    justify-content: center;
+    align-items: center;
+    display: grid;
+}
+
 .container {
     position: relative;
-    min-width: 1100px;
+    min-width: 1150px;
     min-height: 550px;
     display: flex;
+    /* margin-left: 20%; */
     /* border-radius: 20px; */
 }
 
@@ -60,9 +67,10 @@
 
 .container .contactInfo ul.info li span:nth-child(2) {
     color: #e1f5fe;
-    font-family: Poppins;
+    /* font-family: Poppins; */
     margin-left: 10px;
     font-weight: 400;
+    padding-top: 5px;
 }
 
 .container .contactInfo ul.sci {
@@ -366,7 +374,7 @@
 
 .hamburger path {
     fill: none;
-    stroke: #c8a379;
+    stroke: #fff;
     stroke-linecap: round;
 }
 
@@ -614,7 +622,7 @@
     display: block;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    color: #343434;
+    color: #fff;
     font-size: 32px;
 }
 

@@ -9,13 +9,12 @@
 
 .row {
     width: 100%;
-    max-width: 1170px;
+    max-width: 100vw;
     display: flex;
     flex-direction: row;
-    /* grid-template-columns: repeat(3, 1fr); */
-    /* grid-gap: 50px; */
     gap: 15px;
     overflow-x: hidden;
+    justify-content: center;
     padding: 5rem 0;
 }
 
@@ -28,9 +27,11 @@
 
 .row .imgWrapper {
     overflow: hidden;
+    height: 500px;
 }
 
 .row .imgWrapper img {
+    width: 700px;
     height: 500px;
     object-fit: cover;
     transition: 0.3s;
@@ -42,7 +43,7 @@
 
 .row .contentWrapper {
     max-height: 600px;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -64,7 +65,7 @@
 }
 
 .line {
-    width: 3px;
+    width: 6px;
     height: 100%;
     background-color: #00606f;
 }
@@ -89,14 +90,97 @@
 }
 
 .row .contentWrapper p {
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 25px;
     width: 100%;
     max-width: 500px;
-    padding-bottom: 25px;
     letter-spacing: 1px;
     text-align: justify;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 17;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.row .contentWrapper .show-more{
+    margin-top: 25px;
+    position: relative;
+    border: 0;
+    display: inline-block;
+    width: 12rem;
+    height: auto;
+    cursor: pointer;
+    outline: none;
+    vertical-align: middle;
+    background: transparent;
+}
+
+.show-more .text{
+    position: absolute;
+    inset: 0;
+    font-size: 14px;
+    padding: 0.9rem;
+    display: none;
+    width: 10rem;
+    margin-left: 1.85rem;
+    color: #fff;
+    line-height: 1.6;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+}
+
+.show-more .circle{
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #00606f;
+    /* border-radius: 1.625rem; */
+    
+    transition: all 0.4s ease-in-out;
+}
+
+.show-more .circle .icon{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+.show-more .circle .arrow{
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.show-more .circle .arrow::before{
+    content: "";
+    position: absolute;
+    top: -0.3rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+.show-more:hover .circle{
+    width: 100%;
+}
+
+.show-more:hover .arrow{
+    background: #fff !important;
+    transform: translateX(1rem);
+}
+
+.show-more:hover .text{
+    color: #fff;
+    display: block;
 }
 
 .row .contentWrapper a {
@@ -146,14 +230,34 @@
     .row .image-text{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+    align-items: center;
+    }
+
+    .row .imgWrapper img{
+        width: 500px;
     }
 
     .row .contentWrapper p {
-       
         font-size: 16px;
         line-height: 25px;
         max-width: 1000px;
         letter-spacing: 1px;
+    }
+
+    .show-more .circle{
+        width: 100%;
+    }
+
+    .show-more .text{
+        display: block;
+    }
+
+    .text-button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -168,12 +272,13 @@
 
     .row .contentWrapper h2 {
         font-size: 30px;
-        /* padding-bottom: 20px; */
     }
 
     .row .contentWrapper p {
-        font-size: 12px;
+        font-size: 15px;
         line-height: 24px;
+        max-width: 100%;  /* p elementinin kapsayıcıya tam oturmasını sağlar */
+        word-wrap: break-word; /* Metni taşmadan satıra sarması için ekler */
     }
 
     .row .contentWrapper span.textWrapper {
@@ -193,8 +298,13 @@
         margin-top: 30px;
     }
 
+    .row .imgWrapper{
+        height: 400px;
+    }
+
     .row .imgWrapper img {
         height: 400px;
+        max-width: 100%;  /* Görselin taşmasını önlemek için genişliği sınırlayın */
     }
 
     .line {
@@ -205,3 +315,13 @@
         background-color: #000;
     }
 }
+
+
+/* @media (max-width: 500px){
+    .row .contentWrapper p {
+        font-size: 12px;
+        line-height: 24px;
+        padding: 65px !important;
+    }
+} */
+

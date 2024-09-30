@@ -120,6 +120,7 @@
     .row .contentWrapper span.textWrapper {
         justify-content: center;
         align-items: center;
+        width: 300px;
     }
     .line {
         width: 5px;
@@ -134,6 +135,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        grid-gap: 10px;
     }
 
     .row .contentWrapper h2 {

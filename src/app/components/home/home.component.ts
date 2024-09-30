@@ -16,7 +16,7 @@ import { LayoutComponent } from '../layout/layout.component';
 export class HomeComponent {
   isScreenSizeUnder768px = false;
 
-  title: string = "Marqex"
+  title: string = "Slogan Alanı"
   backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/home.jpg")'
 
   constructor(
