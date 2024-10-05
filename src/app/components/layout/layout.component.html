@@ -4,7 +4,8 @@
       <div class="nav__header">
         <div data-aos="fade-right" class="nav__logo">
           <!-- <a href="/">MAR<span>QEX</span></a> -->
-          <a href="/"><img src="/assets\logo2-converted-sharped-transparent-2.png" alt=""></a>
+          <a href="/"><img src="https://marqex.webapi.marqexmarine.com/Images/{{layoutModel.image}}" alt=""></a>
+          <!-- <a href="/"><img src="/assets\logo-png-white.png" alt=""></a> -->
           <!-- <img src="/assets\logo2-converted-sharped.png" alt=""> -->
 
         </div>
@@ -50,19 +51,19 @@
       <div class="footer__col">
         <h4>About Us</h4>
         <p>
-          Founded on the principles of integrity and a vision for advancing
-          industrial solutions, we have evolved into a trusted partner for
-          businesses seeking cutting-edge products and unparalleled support.
+          {{layoutModel.shortAboutText}}
         </p>
 
       </div>
       <div class="footer__col">
         <h4>Social Media</h4>
         <div class="footer__socials">
-          <a href="#"><i class="ri-facebook-fill"></i></a>
-          <a href="#"><i class="ri-twitter-fill"></i></a>
-          <a href="#"><i class="ri-linkedin-fill"></i></a>
-          <a href="#"><i class="ri-instagram-line"></i></a>
+          @for (link of links; track link) {
+            <a href="{{link.linkUrl}}" target="_blank">
+              <i class="ri-{{link.linkIcon}}-fill"></i>
+              <i *ngIf="link.linkIcon === '' || link.linkIcon === null" class="ri-link-m"></i>
+            </a>
+          }
         </div>
       </div>
       <div class="footer__col">
@@ -95,8 +96,8 @@
 
     <div data-aos="fade-right" class="nav__logo menu-logo">
       <!-- <h1><a href="/">MAR<span>QEX</span></a></h1> -->
-      <h1><a href="/"><img src="/assets\logo2-converted-sharped-transparent-2.png" alt=""></a></h1>
-
+      <!-- <h1><a href="/"><img src="/assets\logo2-converted-sharped-transparent-2.png" alt=""></a></h1> -->
+      <h1><a href="/"><img src="https://marqex.webapi.marqexmarine.com/Images/{{layoutModel.image}}" alt=""></a></h1>
     </div>
     
     <div class="nav-element">
@@ -114,9 +115,6 @@
         </li>
         <li class="submenu-item">
           <h1><a style="color: #fff;" href="/contact">Contact</a></h1>
-        </li>
-        <li class="submenu-item">
-          <h1><a style="color: #fff;" href="#">Empty Link</a></h1>
         </li>
       </ul>
     </div>
@@ -145,6 +143,14 @@
     </div>
     <div class="header-nav-footer">
       <ul class="social-links">
+        <!-- @for (link of links; track link) {
+          <li>
+            <a href="{{link.linkUrl}}" target="_blank">
+              <i class="ri-{{link.linkIcon}}-fill"></i>
+              <i *ngIf="link.linkIcon === '' || link.linkIcon === null" class="ri-link-m"></i>
+            </a>
+          </li>
+          } -->
         <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
         <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
         <li><a href="#"><i class="ri-linkedin-fill"></i></a></li>

@@ -6,6 +6,9 @@ import { IonIcon } from "@ionic/angular/standalone";
 import * as AOS from 'aos';
 import { filter } from 'rxjs';
 import { gsap, Power2 } from 'gsap';
+import { HttpService } from '../../services/http.service';
+import { LayoutModel } from '../../models/layout.model';
+import { LinkModel } from '../../models/link.model';
 
 @Component({
   selector: 'app-layout',
@@ -15,22 +18,40 @@ import { gsap, Power2 } from 'gsap';
   styleUrl: './layout.component.css'
 })
 export class LayoutComponent {
+  layoutModel: LayoutModel = new LayoutModel();
+  links: LinkModel[] = [];
   isMenuOpen = false;
   isScreenSizeUnder768px = false;
   isNavigateOpen = false;
 
-  title: string = "Marteq"
+  title: string = ""
   backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/home.jpg")'
 
   constructor(
-    private router: Router
+    private router: Router,
+    private http: HttpService
   ) {
+    this.getAllLayout();
+    this.getAllLink();
     this.checkWindowSize();
     AOS.init({
       duration: 3000,
       delay: 200,
       once: true
     }); // AOS'u başlat
+  }
+
+  getAllLayout(){
+    this.http.get("Layouts/GetAll", (res) => {
+      this.layoutModel = res.data[0];
+      this.title = this.layoutModel.slogan;
+    });
+  }
+
+  getAllLink(){
+    this.http.get("Links/GetAll", (res) => {
+      this.links = res.data;
+    })
   }
 
   setTitle(newTitle: string, newBackground: string) {
@@ -58,10 +79,10 @@ export class LayoutComponent {
 
   checkWindowSize(): void {
     if (window.innerWidth < 768) {
-      console.log('Ekran boyutu 768px altında.');
+      // console.log('Ekran boyutu 768px altında.');
       this.isScreenSizeUnder768px = true;
     } else {
-      console.log('Ekran boyutu 768px veya üzerinde.');
+      // console.log('Ekran boyutu 768px veya üzerinde.');
       this.isScreenSizeUnder768px = false;
     }
   }

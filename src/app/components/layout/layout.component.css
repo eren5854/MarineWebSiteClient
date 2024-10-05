@@ -174,10 +174,11 @@
     .arrowed {
         height: 10px !important;
         width: 10px !important;
+        display: none;
     }
 
     .social-links li {
-        font-size: 16px;
+        font-size: 16px !important;
     }
 
     #toggle-btn {
@@ -191,7 +192,7 @@
         transition: all 0.4s ease;
         position: absolute !important;
         left: 0px !important;
-        margin-top: 50px;
+        margin-top: 100px;
         /* display: flex !important;
         flex-direction: column !important; */
         width: 100%;
@@ -323,7 +324,7 @@
 .nav-element-2 {
     position: relative;
     margin-left: 30%;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     /* display: none; */
     opacity: 0;
     transition: opacity 0.3s ease;

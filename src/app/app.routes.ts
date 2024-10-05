@@ -24,7 +24,7 @@ export const routes: Routes = [
                 component: AboutComponent
             },
             {
-                path: "portfolio/:title",
+                path: "portfolio/:id",
                 component: PortfolioItemComponent
             }
         ]

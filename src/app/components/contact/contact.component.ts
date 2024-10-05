@@ -1,8 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import * as AOS from 'aos';
+import { HttpService } from '../../services/http.service';
+import { ContactModel } from '../../models/contact.model';
+import { LinkModel } from '../../models/link.model';
+import { MessageModel } from '../../models/message.model';
+import { EmailJsService } from '../../services/email-js.service';
+import { EmailJSResponseStatus } from '@emailjs/browser';
+import { LayoutModel } from '../../models/layout.model';
 
 @Component({
   selector: 'app-contact',
@@ -12,12 +19,23 @@ import * as AOS from 'aos';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
+  layoutModel: LayoutModel = new LayoutModel();
+  contactModel: ContactModel = new ContactModel();
+  messageModel: MessageModel = new MessageModel();
+  links: LinkModel[] = [];
   isMenuOpen = false;
   isScreenSizeUnder768px = false;
 
+  contactMessage = '';
+
   constructor(
+    private http: HttpService,
+    private emailService: EmailJsService,
     private router: Router
   ) {
+    this.getAllContact();
+    this.getAllLink();
+    this.getAllLayout();
     this.checkWindowSize();
   }
 
@@ -29,11 +47,44 @@ export class ContactComponent {
     }); // AOS'u başlat
     this.initializeGsapAnimations();
     this.showSubMenu()
-
   }
 
-  // ngOnInit(): void {
-  // }
+  getAllContact(){
+    this.http.get("Informations/GetAll", (res) => {
+      this.contactModel = res.data[0];
+      console.log(this.contactModel);
+    })
+  }
+
+  getAllLayout(){
+    this.http.get("Layouts/GetAll", (res) => {
+      this.layoutModel = res.data[0];
+    });
+  }
+
+  getAllLink(){
+    this.http.get("Links/GetAll", (res) => {
+      this.links = res.data;
+      console.log(this.links);
+      
+    })
+  }
+
+  createMessage(){
+    this.sendEmail();
+    setTimeout(() => {
+      this.http.post("Contacts/Create", this.messageModel, (res) => {
+        console.log(res);
+        setTimeout(() => {
+          location.reload();
+        },3000);
+      });
+    },5000);
+  }
+
+  sendEmail(){
+    this.emailService.sendEmail(this.messageModel);
+  }
 
   ngOnDestroy(): void {
     
@@ -48,14 +99,14 @@ export class ContactComponent {
     const contactInfo = document.querySelector('.contactInfo');
     const contactForm = document.querySelector('.contactForm');
     if (window.innerWidth < 768) {
-      console.log('Ekran boyutu 768px altında.');
+      // console.log('Ekran boyutu 768px altında.');
       this.isScreenSizeUnder768px = true;
       if (contactInfo && contactForm) {
         contactInfo.removeAttribute('data-aos');
         contactForm.removeAttribute('data-aos');
       }
     } else {
-      console.log('Ekran boyutu 768px veya üzerinde.');
+      // console.log('Ekran boyutu 768px veya üzerinde.');
       this.isScreenSizeUnder768px = false;
       if (contactInfo && contactForm) {
         contactInfo.setAttribute('data-aos', 'fade-left');

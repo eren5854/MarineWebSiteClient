@@ -1,175 +1,179 @@
 <section id="home">
-    <header class="header">
-        <nav>
-            <div class="nav__header">
-              <div data-aos="fade-right" class="nav__logo">
-                <!-- <a href="/">MAR<span>QEX</span></a> -->
-                <a href="/"><img src="/assets\logo2-converted-sharped-transparent-2.png" alt=""></a>
-              </div>
-              <!-- <div class="nav__menu__btn" id="menu-btn">
-                <span (click)="toggleMenu()"><i class="ri-menu-line"></i></span>
-              </div> -->
-      
-              <div class="nav__menu__btn">
-                <a class="menu-toggle" id="menuToggle">
-                  <svg viewBox="0 0 12 10" class="hamburger" height="25px" width="25px">
-                    <path d="M10,2 L2,2" class="bar-1"></path>
-                    <path d="M3,5 L10,5" class="bar-2"></path>
-                    <path d="M10,8 L4,8" class="bar-3"></path>
-                  </svg>
-                </a>
-              </div>
-      
-            </div>
-            <ul class="nav__links " id="nav-links">
-              <li data-aos="fade-down">
-                <a href="/portfolio">Portfolio</a>
-              </li>
-              <li data-aos="fade-down"><a href="/about">About Us</a></li>
-              <li data-aos="fade-down"><a href="/contact">Contact</a></li>
-              <a data-aos="fade-down"  class="menu-toggle" id="menuToggle2">
-                <svg viewBox="0 0 12 10" class="hamburger" height="25px" width="25px">
-                  <path d="M10,2 L2,2" class="bar-1"></path>
-                  <path d="M3,5 L10,5" class="bar-2"></path>
-                  <path d="M10,8 L4,8" class="bar-3"></path>
-                </svg>
-              </a>
-              <!-- <li><a href="#client">Bulletin</a></li>-->
-            </ul>
-          </nav>
+  <header class="header">
+    <nav>
+      <div class="nav__header">
+        <div data-aos="fade-right" class="nav__logo">
+          <a href="/"><img src="https://marqex.webapi.marqexmarine.com/Images/{{layoutModel.image}}" alt=""></a>
+        </div>
+        <div class="nav__menu__btn">
+          <a class="menu-toggle" id="menuToggle">
+            <svg viewBox="0 0 12 10" class="hamburger" height="25px" width="25px">
+              <path d="M10,2 L2,2" class="bar-1"></path>
+              <path d="M3,5 L10,5" class="bar-2"></path>
+              <path d="M10,8 L4,8" class="bar-3"></path>
+            </svg>
+          </a>
+        </div>
 
-        <section class="section__container">
-            <div class="container">
-                @if (isScreenSizeUnder768px) {
-                    
-                    <div class="contactInfo">
-                        <div>
-    
-                            <h2>Contact Info</h2>
-                            <ul class="info">
-                                <li>
-                                    <span><i class='bx bxs-location-plus'></i></span>
-                                    <span>
-                                        Address Address Address Address Address Address
-                                    </span>
-                                </li>
-                                <li>
-                                    <span><i class='bx bxs-envelope'></i></span>
-                                    <span>
-                                        lorem&#64;ipsum.com
-                                    </span>
-                                </li>
-                                <li>
-                                    <span><i class='bx bxs-phone'></i></span>
-                                    <span>
-                                        05555555555
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                        <ul class="sci">
-                            <li><a href=""><i class="ri-facebook-fill"></i></a></li>
-                            <li><a href=""><i class="ri-twitter-fill"></i></a></li>
-                            <li><a href=""><i class="ri-instagram-fill"></i></a></li>
-                            <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
-                        </ul>
-                    </div>
-    
-                    <div  class="contactForm">
-                        <h2>Send Message</h2>
-                        <div class="formBox">
-                            <div class="inputBox w50">
-                                <input type="text" required>
-                                <span>Name Surname</span>
-                            </div>
-                            <div class="inputBox w50">
-                                <input type="text" required>
-                                <span>Company</span>
-                            </div>
-                            <div class="inputBox w50">
-                                <input type="text" required>
-                                <span>Phone Number</span>
-                            </div>
-                            <div class="inputBox w50">
-                                <input type="text" required>
-                                <span>Email</span>
-                            </div>
-                            <div class="inputBox w100">
-                                <textarea name="" id="" required></textarea>
-                                <span>Write your message</span>
-                            </div>
-                            <div class="inputBox w100">
-                                <input type="submit" value="Send">
-                                <!-- <i class='bx bx-mail-send'></i> -->
-                            </div>
-                        </div>
-                    </div>
-                }@else {
-                    <div data-aos="fade-right" class="contactInfo">
-                        <div>
-                            <h2>Contact Info</h2>
-                            <ul class="info">
-                                <li>
-                                    <span><i class='bx bxs-location-plus'></i></span>
-                                    <span>
-                                        Address Address Address Address Address Address
-                                    </span>
-                                </li>
-                                <li>
-                                    <span><i class='bx bxs-envelope'></i></span>
-                                    <span>
-                                        lorem&#64;ipsum.com
-                                    </span>
-                                </li>
-                                <li>
-                                    <span><i class='bx bxs-phone'></i></span>
-                                    <span>
-                                        05555555555
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                        <ul class="sci">
-                            <li><a href=""><i class="ri-facebook-fill"></i></a></li>
-                            <li><a href=""><i class="ri-twitter-fill"></i></a></li>
-                            <li><a href=""><i class="ri-instagram-fill"></i></a></li>
-                            <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
-                        </ul>
-                    </div>
-    
-                    <div data-aos="fade-left" class="contactForm">
-                        <h2>Send Message</h2>
-                        <div class="formBox">
-                            <div class="inputBox w50">
-                                <input type="text" required>
-                                <span>Name Surname</span>
-                            </div>
-                            <div class="inputBox w50">
-                                <input type="text" required>
-                                <span>Company</span>
-                            </div>
-                            <div class="inputBox w50">
-                                <input type="text" required>
-                                <span>Phone Number</span>
-                            </div>
-                            <div class="inputBox w50">
-                                <input type="text" required>
-                                <span>Email</span>
-                            </div>
-                            <div class="inputBox w100">
-                                <textarea name="" id="" required></textarea>
-                                <span>Write your message</span>
-                            </div>
-                            <div class="inputBox w100">
-                                <input type="submit" value="Send">
-                                <!-- <i class='bx bx-mail-send'></i> -->
-                            </div>
-                        </div>
-                    </div>
-                }
+      </div>
+      <ul class="nav__links " id="nav-links">
+        <li data-aos="fade-down">
+          <a href="/portfolio">Portfolio</a>
+        </li>
+        <li data-aos="fade-down"><a href="/about">About Us</a></li>
+        <li data-aos="fade-down"><a href="/contact">Contact</a></li>
+        <a data-aos="fade-down" class="menu-toggle" id="menuToggle2">
+          <svg viewBox="0 0 12 10" class="hamburger" height="25px" width="25px">
+            <path d="M10,2 L2,2" class="bar-1"></path>
+            <path d="M3,5 L10,5" class="bar-2"></path>
+            <path d="M10,8 L4,8" class="bar-3"></path>
+          </svg>
+        </a>
+      </ul>
+    </nav>
+
+    <section class="section__container">
+      <div class="container">
+        @if (isScreenSizeUnder768px) {
+
+        <div class="contactInfo">
+          <div>
+
+            <h2>Contact Info</h2>
+            <ul class="info">
+              <li>
+                <span><i class='bx bxs-location-plus'></i></span>
+                <span>
+                  {{contactModel.address}}
+                </span>
+              </li>
+              <li>
+                <span><i class='bx bxs-envelope'></i></span>
+                <span>
+                  {{contactModel.email}}
+                </span>
+              </li>
+              <li>
+                <span><i class='bx bxs-phone'></i></span>
+                <span>
+                  {{contactModel.phoneNumber}}
+                </span>
+              </li>
+            </ul>
+          </div>
+          <ul class="sci">
+            <li><a href=""><i class="ri-facebook-fill"></i></a></li>
+            <li><a href=""><i class="ri-twitter-fill"></i></a></li>
+            <li><a href=""><i class="ri-instagram-fill"></i></a></li>
+            <li><a href=""><i class="ri-linkedin-fill"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="contactForm">
+          <h2>Send Message</h2>
+          <div class="formBox">
+            <div class="inputBox w50">
+              <input [(ngModel)]="messageModel.fullName" type="text" required>
+              <span>Name Surname</span>
             </div>
-        </section>
-    </header>
+            <div class="inputBox w50">
+              <input [(ngModel)]="messageModel.companyName" type="text" required>
+              <span>Company</span>
+            </div>
+            <div class="inputBox w50">
+              <input [(ngModel)]="messageModel.phone" type="text" required>
+              <span>Phone Number</span>
+            </div>
+            <div class="inputBox w50">
+              <input [(ngModel)]="messageModel.email" type="text" required>
+              <span>Email</span>
+            </div>
+            <div class="inputBox w50">
+              <input [(ngModel)]="messageModel.subject" type="text" required>
+              <span>Subject</span>
+            </div>
+            <div class="inputBox w100">
+              <textarea [(ngModel)]="messageModel.message" name="" id="" required></textarea>
+              <span>Write your message</span>
+            </div>
+            <div class="inputBox w100">
+              <input (click)="createMessage()" type="submit" value="Send">
+            </div>
+          </div>
+        </div>
+        }@else {
+        <div data-aos="fade-right" class="contactInfo">
+          <div>
+            <h2>Contact Info</h2>
+            <ul class="info">
+              <li>
+                <span><i class='bx bxs-location-plus'></i></span>
+                <span>
+                  {{contactModel.address}}
+                </span>
+              </li>
+              <li>
+                <span><i class='bx bxs-envelope'></i></span>
+                <span>
+                  {{contactModel.email}}
+                </span>
+              </li>
+              <li>
+                <span><i class='bx bxs-phone'></i></span>
+                <span>
+                  {{contactModel.phoneNumber}}
+                </span>
+              </li>
+            </ul>
+          </div>
+          <ul class="sci">
+            @for (link of links; track link) {
+            <li>
+              <a href="{{link.linkUrl}}" target="_blank">
+                <i class="ri-{{link.linkIcon}}-fill"></i>
+                <i *ngIf="link.linkIcon === '' || link.linkIcon === null" class="ri-link-m"></i>
+              </a>
+            </li>
+            }
+          </ul>
+        </div>
+
+        <div data-aos="fade-left" class="contactForm">
+          <h2>Send Message</h2>
+          <div class="formBox">
+            <div class="inputBox w50">
+              <input [(ngModel)]="messageModel.fullName" type="text" required>
+              <span>Name Surname</span>
+            </div>
+            <div class="inputBox w50">
+              <input [(ngModel)]="messageModel.companyName" type="text" required>
+              <span>Company</span>
+            </div>
+            <div class="inputBox w50">
+              <input [(ngModel)]="messageModel.phone" type="text" required>
+              <span>Phone Number</span>
+            </div>
+            <div class="inputBox w50">
+              <input [(ngModel)]="messageModel.email" type="text" required>
+              <span>Email</span>
+            </div>
+            <div class="inputBox w50">
+              <input [(ngModel)]="messageModel.subject" type="text" required>
+              <span>Subject</span>
+            </div>
+            <div class="inputBox w100">
+              <textarea [(ngModel)]="messageModel.message" name="" id="" required></textarea>
+              <span>Write your message</span>
+            </div>
+            <div class="inputBox w100">
+              <input (click)="createMessage()" type="submit" value="Send">
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </section>
+  </header>
 </section>
 
 <section class="fullpage-menu">
@@ -191,11 +195,10 @@
     </div>
 
     <div data-aos="fade-right" class="nav__logo menu-logo">
-      <!-- <h1><a href="/">MAR<span>QEX</span></a></h1> -->
-      <h1><a href="/"><img src="/assets\logo2-converted-sharped-transparent-2.png" alt=""></a></h1>
+      <h1><a href="/"><img src="https://marqex.webapi.marqexmarine.com/Images/{{layoutModel.image}}" alt=""></a></h1>
 
     </div>
-    
+
     <div class="nav-element">
       <ul>
         <li class="submenu-item">
@@ -211,9 +214,6 @@
         </li>
         <li class="submenu-item">
           <h1><a style="color: #fff;" href="/contact">Contact</a></h1>
-        </li>
-        <li class="submenu-item">
-          <h1><a style="color: #fff;" href="#">Empty Link</a></h1>
         </li>
       </ul>
     </div>

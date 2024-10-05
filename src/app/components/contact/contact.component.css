@@ -100,7 +100,7 @@
 
 .container .contactForm {
     position: absolute;
-    padding: 70px 50px;
+    padding: 50px 50px;
     padding-left: 250px;
     margin-left: 150px;
     width: calc(100% - 150px);
@@ -115,6 +115,7 @@
     color: #f0c390;
     font-size: 34px;
     font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .container .contactForm .formBox {
@@ -122,7 +123,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding-top: 30px;
+    /* padding-top: 30px; */
 }
 
 .container .contactForm .formBox .inputBox {
@@ -216,7 +217,7 @@
 
     .container .contactForm {
         width: 100% !important;
-        height: 480px !important;
+        /* height: 480px !important; */
     }
 
     .container .contactInfo ul.sci {
@@ -258,11 +259,11 @@
 
 @media (max-width: 500px) {
     .container {
-        margin: auto;
+        /* margin: auto; */
     }
 
     .container .contactForm {
-        height: 380px !important;
+        /* height: 380px !important; */
         padding: 10px !important;
     }
 
@@ -590,7 +591,7 @@
 .nav-element-2 {
     position: relative;
     margin-left: 30%;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     /* display: none; */
     opacity: 0;
     transition: opacity 0.3s ease;

@@ -1,23 +1,25 @@
 <section class="section__container" id="portfolio">
+    @for (portfolio of portfolios; track portfolio) {
     <div class="row">
         <div class="contentWrapper">
             <div data-aos="fade-right" class="line"></div>
             <div class="content">
                 <span data-aos="fade-down" class="textWrapper">
-                    <h2>Refit</h2>
+                    <h2>{{portfolio.title}}</h2>
                 </span>
                 <div class="image-text">
                     <div data-aos="zoom-in" class="imgWrapper">
-                        <img src="https://r4.wallpaperflare.com/wallpaper/743/395/681/maersk-maersk-line-container-ship-sea-wallpaper-f1dd630ce0a739778ff1d566007d7fe3.jpg"
+                        <img src="https://marqex.webapi.marqexmarine.com/Images/{{portfolio.image}}"
                             alt="">
                     </div>
                     <div data-aos="zoom-in" class="text-button">
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vitae, corrupti dolorem
+                            {{portfolio.description}}
+                            <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vitae, corrupti dolorem
                             voluptate aut ipsa iste explicabo velit expedita quia atque accusamus asperiores enim
-                            repellendus ab praesentium temporibus eveniet exercitationem?
+                            repellendus ab praesentium temporibus eveniet exercitationem? -->
                         </p>
-                        <button (click)="routerClick('Refit')" class="show-more">
+                        <button (click)="routerClick(portfolio.id!)" class="show-more">
                             <span class="circle">
                                 <span class="icon arrow"></span>
                                 <span class="text">Read More...</span>
@@ -29,223 +31,5 @@
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="contentWrapper">
-            <div data-aos="fade-right" class="line"></div>
-            <div class="content">
-                <span data-aos="fade-down" class="textWrapper">
-                    <h2>Fason İmalat</h2>
-                </span>
-                <div class="image-text">
-                    <div data-aos="zoom-in" class="imgWrapper">
-                        <img src="/assets/img-1.jpg" alt="">
-                    </div>
-                    <div data-aos="zoom-in" class="text-button">
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vitae, corrupti dolorem
-                            voluptate aut ipsa iste explicabo velit expedita quia atque accusamus asperiores enim
-                            repellendus ab praesentium temporibus eveniet exercitationem?
-
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vitae, corrupti dolorem
-                            voluptate aut ipsa iste explicabo velit expedita quia atque accusamus asperiores enim
-                            repellendus ab praesentium temporibus eveniet exercitationem?
-
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vitae, corrupti dolorem
-                            voluptate aut ipsa iste explicabo velit expedita quia atque accusamus asperiores enim
-                            repellendus ab praesentium temporibus eveniet exercitationem?
-                        </p>
-
-                        <button (click)="routerClick('Fason-Imalat');" class="show-more">
-                            <span class="circle">
-                                <span class="icon arrow"></span>
-                                <span class="text">Read More...</span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="contentWrapper">
-            <div data-aos="fade-right" class="line"></div>
-            <div class="content">
-                <span data-aos="fade-down" class="textWrapper">
-                    <h2>Lorem ipsum dolor</h2>
-                </span>
-                <div class="image-text">
-                    <div data-aos="zoom-in" class="imgWrapper">
-                        <img src="/assets/yacht-5.jpg" alt="">
-                    </div>
-                    <div data-aos="zoom-in" class="text-button">
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vitae, corrupti dolorem
-                            voluptate aut ipsa iste explicabo velit expedita quia atque accusamus asperiores enim
-                            repellendus ab praesentium temporibus eveniet exercitationem?
-
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vitae, corrupti dolorem
-                            voluptate aut ipsa iste explicabo velit expedita quia atque accusamus asperiores enim
-                            repellendus ab praesentium temporibus eveniet exercitationem?
-
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vitae, corrupti dolorem
-                            voluptate aut ipsa iste explicabo velit expedita quia atque accusamus asperiores enim
-                            repellendus ab praesentium temporibus eveniet exercitationem?
-
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vitae, corrupti dolorem
-                            voluptate aut ipsa iste explicabo velit expedita quia atque accusamus asperiores enim
-                            repellendus ab praesentium temporibus eveniet exercitationem?
-                        </p>
-                        <button class="show-more">
-                            <span class="circle">
-                                <span class="icon arrow"></span>
-                                <span class="text">Read More...</span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    }
 </section>
-
-
-<!-- 
-<section class="section__container" id="portfolio">
-    <div class="row">
-        <div data-aos="zoom-in" class="imgWrapper">
-            <img src="https://r4.wallpaperflare.com/wallpaper/743/395/681/maersk-maersk-line-container-ship-sea-wallpaper-f1dd630ce0a739778ff1d566007d7fe3.jpg"
-                alt="">
-        </div>
-        <div class="contentWrapper">
-            <div class="content">
-                <span class="textWrapper">
-                    <span></span>
-                    <h1>Amels 60</h1>
-                    <span></span>
-                </span>
-                <h2>Lorem ipsum dolor sit amet</h2>
-                <p>This award-winning 60-metre (197ft) Amels Limited Editions design has been turning heads since her
-                    introduction in 2019. A next-generation semi-custom Amels that blends heritage with sophisticated
-                    technology, taking the superyacht industry’s greatest success story into the future. Just like the
-                    global fleet of close to 50 Limited Editions yachts at sea today, this sought-after Amels 60 is fast
-                    becoming become the collectors’ item for tomorrow’s generation of yacht owners, popular for both
-                    charter and private use.</p>
-                <a href="#">
-                    <div class="arrow">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    Read More...
-                </a>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div *ngIf="isScreenSizeUnder768px" class="imgWrapper" data-aos="zoom-in">
-            <img src="https://r4.wallpaperflare.com/wallpaper/79/492/970/boat-yachts-interior-wallpaper-e8063cfadfecc7099e7099b2f2093b70.jpg"
-                alt="">
-        </div>
-        <div class="contentWrapper">
-            <div class="content">
-                <span class="textWrapper">
-                    <span></span>
-                    <h1>Amels 60</h1>
-                    <span></span>
-                </span>
-                <h2>Building your Dream</h2>
-                <p>This award-winning 60-metre (197ft) Amels Limited Editions design has been turning heads since her
-                    introduction in 2019. A next-generation semi-custom Amels that blends heritage with sophisticated
-                    technology, taking the superyacht industry’s greatest success story into the future. Just like the
-                    global fleet of close to 50 Limited Editions yachts at sea today, this sought-after Amels 60 is fast
-                    becoming become the collectors’ item for tomorrow’s generation of yacht owners, popular for both
-                    charter and private use.</p>
-                <a href="#">
-                    <div class="arrow">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    Read More...
-                </a>
-
-            </div>
-        </div>
-        <div *ngIf="!isScreenSizeUnder768px" class="imgWrapper" data-aos="zoom-in">
-            <img src="https://r4.wallpaperflare.com/wallpaper/79/492/970/boat-yachts-interior-wallpaper-e8063cfadfecc7099e7099b2f2093b70.jpg"
-                alt="">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="imgWrapper" data-aos="zoom-in">
-            <img src="https://c1.wallpaperflare.com/path/179/337/151/coast-turquoise-sea-ocean-2d82829e00760a13be077b4903969905.jpg"
-                alt="">
-        </div>
-        <div class="contentWrapper">
-            <div class="content">
-                <span class="textWrapper">
-                    <span></span>
-                    <h1>Amels 60</h1>
-                    <span></span>
-                </span>
-                <h2>Sailing Beyond Tradition</h2>
-                <p>This award-winning 60-metre (197ft) Amels Limited Editions design has been turning heads since her
-                    introduction in 2019. A next-generation semi-custom Amels that blends heritage with sophisticated
-                    technology, taking the superyacht industry’s greatest success story into the future. Just like the
-                    global fleet of close to 50 Limited Editions yachts at sea today, this sought-after Amels 60 is fast
-                    becoming become the collectors’ item for tomorrow’s generation of yacht owners, popular for both
-                    charter and private use.</p>
-                <a href="#">
-                    <div class="arrow">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    Read More...
-                </a>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div *ngIf="isScreenSizeUnder768px" class="imgWrapper" data-aos="zoom-in">
-            <img src="https://r4.wallpaperflare.com/wallpaper/376/801/202/yacht-vehicle-lamborghini-terzo-millennio-luxury-yacht-wallpaper-78266d5810c0fc6820ec11de7812745a.jpg"
-                alt="">
-        </div>
-        <div class="contentWrapper">
-            <div class="content">
-                <span class="textWrapper">
-                    <span></span>
-                    <h1>Amels 60</h1>
-                    <span></span>
-                </span>
-                <h2>Limited Editions</h2>
-                <p>This award-winning 60-metre (197ft) Amels Limited Editions design has been turning heads since her
-                    introduction in 2019. A next-generation semi-custom Amels that blends heritage with sophisticated
-                    technology, taking the superyacht industry’s greatest success story into the future. Just like the
-                    global fleet of close to 50 Limited Editions yachts at sea today, this sought-after Amels 60 is fast
-                    becoming become the collectors’ item for tomorrow’s generation of yacht owners, popular for both
-                    charter and private use.</p>
-
-                <a href="#">
-                    <div class="arrow">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    Read More...
-                </a>
-            </div>
-        </div>
-        <div *ngIf="!isScreenSizeUnder768px" class="imgWrapper" data-aos="zoom-in">
-            <img src="https://r4.wallpaperflare.com/wallpaper/376/801/202/yacht-vehicle-lamborghini-terzo-millennio-luxury-yacht-wallpaper-78266d5810c0fc6820ec11de7812745a.jpg"
-                alt="">
-        </div>
-    </div>
-</section> -->

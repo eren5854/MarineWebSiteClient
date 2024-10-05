@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import * as AOS from 'aos';
 import { LayoutComponent } from '../layout/layout.component';
+import { HttpService } from '../../services/http.service';
+import { AboutModel } from '../../models/about.model';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 
 @Component({
@@ -15,27 +18,37 @@ import { LayoutComponent } from '../layout/layout.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AboutComponent {
+  abouts: AboutModel[] = [];
   isMenuOpen = false;
   isScreenSizeUnder768px = false;
   isNavigateOpen = false;
 
-  title:string = "About";
+  title:string = "";
   backgroundImage: string = 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url("/assets/about-top.jpg")'
   
   private scrollHandler: () => void;
 
   constructor(
-    private router: Router,
-    private layout: LayoutComponent
+    private http: HttpService,
+    private layout: LayoutComponent,
+    private sanitizer: DomSanitizer
   ) {
+    this.getAllAbout();
     this.scrollHandler = this.scrollActive.bind(this);
     this.checkWindowSize();
     this.layout.setTitle(this.title, this.backgroundImage);
-    AOS.init({
-      duration: 2000,
-      delay:200,
-      once:true
-    }); // AOS'u başlat
+  }
+
+  getAllAbout(){
+    this.http.get("Abouts/GetAll", (res) => {
+      this.abouts = res.data.map((about: AboutModel) => {
+        return { ...about, text: this.getSafeHtml(about.text) };
+      });
+    });
+  }
+
+  getSafeHtml(text: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(text);
   }
 
   ngOnInit(){

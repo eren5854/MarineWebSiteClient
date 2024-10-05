@@ -1,12 +1,38 @@
 <section class="about__section" id="about">
+    
     <div class="about__header">
-        <!-- <div>
-            <h3 class="section__subheader reveal-bottom-1">Time Matters Most</h3>
-            <h1 class="section__header reveal-bottom-2">
-                Past - Present - Future
-            </h1>
-        </div> -->
-        <p data-aos="fade" class="section__description about__p">
+        @for (about of abouts; track about) {
+            <p data-aos="fade" class="section__description about__p" [innerHTML]="about.text">
+                <!-- {{about.text}} -->
+                <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis omnis facere quidem laboriosam, placeat
+                autem veritatis aliquid est! Sit nemo suscipit excepturi et nulla similique eum eius repudiandae sint neque.
+    
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio vero repellat nemo atque ipsam laborum
+                quos natus, eius, iure quae reprehenderit similique in possimus veritatis ullam modi earum error asperiores.
+    
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptates? Animi, est praesentium suscipit
+                temporibus unde quis, architecto modi quae dolores distinctio repudiandae non nobis rem dolor error
+                dignissimos omnis.
+    
+                <br>
+                <br>
+    
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis omnis facere quidem laboriosam, placeat
+                autem veritatis aliquid est! Sit nemo suscipit excepturi et nulla similique eum eius repudiandae sint neque.
+    
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio vero repellat nemo atque ipsam laborum
+                quos natus, eius, iure quae reprehenderit similique in possimus veritatis ullam modi earum error asperiores.
+    
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptates? Animi, est praesentium suscipit
+                temporibus unde quis, architecto modi quae dolores distinctio repudiandae non nobis rem dolor error
+                dignissimos omnis. -->
+            </p>
+    
+            <div *ngIf="about.image" class=" full-width-image">
+                <img src="https://marqex.webapi.marqexmarine.com/Images/{{about.image}}" alt="">
+            </div>
+        }
+        <!-- <p data-aos="fade" class="section__description about__p">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis omnis facere quidem laboriosam, placeat
             autem veritatis aliquid est! Sit nemo suscipit excepturi et nulla similique eum eius repudiandae sint neque.
 
@@ -58,6 +84,6 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptates? Animi, est praesentium suscipit
             temporibus unde quis, architecto modi quae dolores distinctio repudiandae non nobis rem dolor error
             dignissimos omnis.
-        </p>
+        </p> -->
     </div>
 </section>

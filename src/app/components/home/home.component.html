@@ -7,7 +7,8 @@
       </h1>
     </div>
     <p data-aos="zoom-in-up" class="section__description ">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis omnis facere quidem laboriosam, placeat autem
+      {{homeModel.text}}
+      <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis omnis facere quidem laboriosam, placeat autem
       veritatis aliquid est! Sit nemo suscipit excepturi et nulla similique eum eius repudiandae sint neque.
 
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio vero repellat nemo atque ipsam laborum quos
@@ -15,13 +16,30 @@
 
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptates? Animi, est praesentium suscipit
       temporibus unde quis, architecto modi quae dolores distinctio repudiandae non nobis rem dolor error dignissimos
-      omnis.
+      omnis. -->
     </p>
   </div>
 </section>
 
 <section style="max-width: 1000px; margin-top: -100px;" class="section__container" id="portfolio">
-  <div class="row">
+  @for (homeImage of homeImages; track homeImage) {
+    <div class="row">
+      <div class="contentWrapper">
+        <div class="content">
+          <span class="textWrapper">
+            <h2 data-aos="fade-right">{{homeImage.title}}</h2>
+          </span>
+        </div>
+      </div>
+      <div data-aos="fade-down" class="line"></div>
+      <div data-aos="zoom-in" class="imgWrapper">
+        <img
+          src="https://marqex.webapi.marqexmarine.com/Images/{{homeImage.image}}"
+          alt="">
+      </div>
+    </div>
+  }
+  <!-- <div class="row">
     <div class="contentWrapper">
       <div class="content">
         <span class="textWrapper">
@@ -67,5 +85,5 @@
         src="https://c1.wallpaperflare.com/path/179/337/151/coast-turquoise-sea-ocean-2d82829e00760a13be077b4903969905.jpg"
         alt="">
     </div>
-  </div>
+  </div> -->
 </section>
